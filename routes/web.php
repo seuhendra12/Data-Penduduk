@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\PendudukController;
+use App\Http\Controllers\ProvinsiController;
+use App\Models\Provinsi;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,11 +15,14 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// Data Provinsi
+Route::resource('provinsi', ProvinsiController::class);
+Route::get('sampah-provinsi', [ProvinsiController::class,'trash']);
+Route::get('/pulih-data-provinsi/{id}', [ProvinsiController::class, 'restore']);
+Route::get('/hapus-data-provinsi-permanen/{id}', [ProvinsiController::class, 'forceDelete']);
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
+// Data Penduduk
 Route::get('/', [PendudukController::class, 'index']);
 Route::get('/tambah-data', [PendudukController::class, 'create']);
 Route::post('/simpan-data', [PendudukController::class, 'store']);
