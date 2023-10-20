@@ -10,4 +10,8 @@ class Provinsi extends Model
 {
     use HasFactory, SoftDeletes;
     protected $guarded=[];
+
+    protected function penduduk() {
+        return $this->hasMany(Penduduk::class);
+    }
 }

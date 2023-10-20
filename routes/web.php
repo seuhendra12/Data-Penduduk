@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\KabupatenController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\PendudukController;
 use App\Http\Controllers\ProvinsiController;
 use App\Models\Provinsi;
@@ -38,3 +39,7 @@ Route::get('/hapus-data/{id}', [PendudukController::class, 'destroy']);
 Route::get('/data-sampah', [PendudukController::class, 'trash']);
 Route::get('/pulih-data/{id}', [PendudukController::class, 'restore']);
 Route::get('/hapus-data-permanen/{id}', [PendudukController::class, 'forceDelete']);
+
+// Laporan
+Route::get('/laporan/provinsi', [LaporanController::class,'index']);
+Route::get('/cetak-laporan-per-provinsi', [LaporanController::class,'pdfLaporanPerProvinsi']);
