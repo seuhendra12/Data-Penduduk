@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KabupatenController;
 use App\Http\Controllers\PendudukController;
 use App\Http\Controllers\ProvinsiController;
 use App\Models\Provinsi;
@@ -16,11 +17,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // Data Provinsi
-Route::resource('provinsi', ProvinsiController::class);
-Route::get('sampah-provinsi', [ProvinsiController::class,'trash']);
+Route::resource('/provinsi', ProvinsiController::class);
+Route::get('/sampah-provinsi', [ProvinsiController::class,'trash']);
 Route::get('/pulih-data-provinsi/{id}', [ProvinsiController::class, 'restore']);
 Route::get('/hapus-data-provinsi-permanen/{id}', [ProvinsiController::class, 'forceDelete']);
 
+// Data Kabupaten
+Route::resource('/kabupaten', KabupatenController::class);
+Route::get('/sampah-kabupaten', [KabupatenController::class,'trash']);
+Route::get('/pulih-data-kabupaten/{id}', [KabupatenController::class, 'restore']);
+Route::get('/hapus-data-kabupaten-permanen/{id}', [KabupatenController::class, 'forceDelete']);
 
 // Data Penduduk
 Route::get('/', [PendudukController::class, 'index']);
