@@ -45,3 +45,4 @@ Route::get('/laporan/provinsi', [LaporanController::class,'laporanPerProvinsi'])
 Route::get('/laporan/kabupaten', [LaporanController::class,'laporanPerKabupaten']);
 Route::get('/cetak-laporan-per-provinsi', [LaporanController::class,'pdfLaporanPerProvinsi']);
 Route::get('/cetak-laporan-per-kabupaten', [LaporanController::class,'pdfLaporanPerKabupaten']);
+Route::get('/export-excel', [LaporanController::class, 'exportExcel']);

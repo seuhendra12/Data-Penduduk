@@ -9,7 +9,8 @@ class ProvinsiController extends Controller
 {
     public function index()
     {
-        $provinsis = Provinsi::paginate(10);
+        $provinsis = Provinsi::orderBy('nama')
+        ->paginate(10);
         return view('provinsi.index', compact('provinsis'));
     }
 
@@ -63,7 +64,7 @@ class ProvinsiController extends Controller
 
     public function trash()
     {
-        $provinsis = Provinsi::onlyTrashed()->paginate(10);
+        $provinsis = Provinsi::onlyTrashed()->orderBy('nama')->paginate(10);
         return view('provinsi.trash', compact('provinsis'));
     }
 

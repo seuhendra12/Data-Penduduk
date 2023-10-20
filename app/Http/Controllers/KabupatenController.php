@@ -73,7 +73,7 @@ class KabupatenController extends Controller
 
     public function trash()
     {
-        $kabupatens = Kabupaten::onlyTrashed()->paginate(10);
+        $kabupatens = Kabupaten::onlyTrashed()->orderBy('nama')->paginate(10);
         return view('kabupaten.trash', compact('kabupatens'));
     }
 

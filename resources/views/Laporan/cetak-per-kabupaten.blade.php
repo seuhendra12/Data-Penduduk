@@ -36,7 +36,7 @@
 </head>
 
 <body>
-  <h1>Laporan Jumlah Penduduk per Provinsi</h1>
+  <h1>Laporan Jumlah Penduduk per Kabupaten</h1>
   <table>
     <thead>
       <tr>

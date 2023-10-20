@@ -11,11 +11,11 @@ class Penduduk extends Model
     use HasFactory, SoftDeletes;
     protected $guarded = [];
 
-    protected function provinsi() {
+    public function provinsi() {
         return $this->belongsTo(Provinsi::class,'provinsi_id');
     }
 
-    protected function kabupaten() {
+    public function kabupaten() {
         return $this->belongsTo(Kabupaten::class,'kabupaten_id');
     }
 }

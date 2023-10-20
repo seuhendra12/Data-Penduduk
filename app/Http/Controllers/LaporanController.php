@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\PendudukExport;
 use App\Models\Kabupaten;
 use App\Models\Provinsi;
 use Illuminate\Http\Request;
 use Dompdf\Dompdf;
+use Maatwebsite\Excel\Excel;
 
 class LaporanController extends Controller
 {
@@ -55,5 +57,10 @@ class LaporanController extends Controller
 
         // Tampilkan PDF yang dihasilkan langsung di browser
         $pdf->stream('Laporan_per_kabupaten' . '.pdf');
+    }
+
+    public function exportExcel() {
+        $excel = app()->make(Excel::class);
+        return $excel->download(new PendudukExport, 'penduduk.xlsx');
     }
 }

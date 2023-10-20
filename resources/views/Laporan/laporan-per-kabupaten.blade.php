@@ -5,8 +5,9 @@
   <h3>Laporan Penduduk Per Kabupaten</h3>
 </div>
 <div class="row my-2">
-  <div class="col-2">
+  <div class="col-6">
     <a href="{{url('cetak-laporan-per-kabupaten')}}" class="btn btn-primary rounded-0">Cetak PDF</a>
+    <a href="{{url('export-excel')}}" class="btn btn-success rounded-0">Export Excel</a>
   </div>
 </div>
 <table class="table">
@@ -27,7 +28,7 @@
       <td>{{$data->penduduk->count() ?? '-'}} Jiwa</td>
     </tr>
     @empty
-    <td colspan="3" class="text-center bg-danger">-- Data Tidak Ada --</td>
+    <td colspan="4" class="text-center bg-danger">-- Data Tidak Ada --</td>
     @endforelse
   </tbody>
 </table>
