@@ -41,5 +41,7 @@ Route::get('/pulih-data/{id}', [PendudukController::class, 'restore']);
 Route::get('/hapus-data-permanen/{id}', [PendudukController::class, 'forceDelete']);
 
 // Laporan
-Route::get('/laporan/provinsi', [LaporanController::class,'index']);
+Route::get('/laporan/provinsi', [LaporanController::class,'laporanPerProvinsi']);
+Route::get('/laporan/kabupaten', [LaporanController::class,'laporanPerKabupaten']);
 Route::get('/cetak-laporan-per-provinsi', [LaporanController::class,'pdfLaporanPerProvinsi']);
+Route::get('/cetak-laporan-per-kabupaten', [LaporanController::class,'pdfLaporanPerKabupaten']);

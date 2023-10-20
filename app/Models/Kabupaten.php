@@ -14,4 +14,8 @@ class Kabupaten extends Model
     protected function provinsi() {
         return $this->belongsTo(Provinsi::class,'provinsi_id');
     }
+
+    protected function penduduk() {
+        return $this->hasMany(Penduduk::class);
+    }
 }
